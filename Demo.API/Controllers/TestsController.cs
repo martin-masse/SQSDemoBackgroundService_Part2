@@ -21,7 +21,7 @@ namespace Demo.API.Controllers
         [HttpPost("PublishToQueue")]
         public async Task<ActionResult<bool>> PublishToQueue(string message)
         {
-            var queueName = _configuration.GetValue<string>("QueueService:QueueName");
+            var queueName = _configuration.GetValue<string>("QueueService:TextMessageQueueName");
             var queueUrl = await _queueService.GetQueueUrlAsync(queueName);
            
             return  await _queueService.PublishToQueueAsync(queueUrl, message);
