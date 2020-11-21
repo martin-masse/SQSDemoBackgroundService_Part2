@@ -1,6 +1,7 @@
 # SQSDemoBackgroundService_Part2
 
 Support code for the following article
+
 https://medium.com/@martinmasse/build-an-aws-sqs-background-service-with-net-5-part-2-c8a571c11b6a
 
 # Prerequisites
