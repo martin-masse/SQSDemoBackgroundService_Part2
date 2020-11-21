@@ -54,7 +54,7 @@ namespace Nuages.QueueService
 
                         foreach (var msg in messages)
                         {
-                            var result = ProcessMessage(msg);
+                            var result = await ProcessMessageAsync(msg);
 
                             if (result)
                             {
@@ -77,7 +77,7 @@ namespace Nuages.QueueService
             }
         }
 
-        protected abstract bool ProcessMessage(QueueMessage msg);
+        protected abstract Task<bool> ProcessMessageAsync(QueueMessage msg);
 
         protected virtual void LogInformation(string message)
         {

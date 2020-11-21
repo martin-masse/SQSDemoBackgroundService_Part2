@@ -1,4 +1,5 @@
 using System;
+using System.Threading.Tasks;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using Nuages.QueueService;
@@ -15,11 +16,11 @@ namespace Demo.API
              QueueName = configuration.GetValue<string>("QueueService:TextMessageQueueName");
         }
         
-        protected override bool ProcessMessage(QueueMessage msg)
+        protected override async Task<bool> ProcessMessageAsync(QueueMessage msg)
         {
             LogInformation(msg.Body);
 
-            return true;
+            return await Task.FromResult(true);
         }
     }
 }
