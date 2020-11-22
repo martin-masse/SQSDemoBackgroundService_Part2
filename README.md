@@ -14,5 +14,8 @@ You will need this to run the code.
 
 # How to run the demo
 - Clone this repository
+- Set TaskWorkerService:QueueName to the name of your queue in appsettings.json
+- Set AWS:Profile (or make sure you have a Default profile setup in .aws) and AWS:Region in appsettings.json 
 - cd Demo.API
-- dotnet run
+- dotnet watch run
+- To to https://localhost:5001/swagger/index.html
