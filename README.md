@@ -13,6 +13,10 @@ You will need this to run the code.
 - .NET 5 (or 3.1, you will have to change the target framework)
 
 # How to run the demo
+
 - Clone this repository
-- cd Demo.API
-- dotnet run
+- Change the value of AWS:Profile (or make sure you have a default profile setup in .aws) and set your AWS:Region in appsettings.json (default is us-east-1) 
+- Optionnaly set TaskWorkerService:QueueName to the name of your queue in appsettings.json
+- cd SQSDemoBackgroundService_Part2/Demo.API
+- dotnet watch run
+- Go to https://localhost:5001/swagger/index.html
